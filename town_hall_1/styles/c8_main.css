@@ -11,7 +11,7 @@ body {
     font-size: 100%;
     /* width: 800px; */
 	width: 98%;
-	max-width: 960;
+	max-width: 960px;
     margin: 0 auto;
     border: 3px solid #931420;
     background-color: #fffded;
@@ -19,6 +19,7 @@ body {
 a:focus, a:hover {
 	font-style: italic;
 }
+
 /* the styles for the header */
 header {
 	padding: 1.5em 0 2em 0;
@@ -49,6 +50,9 @@ header img {
 	text-shadow: 2px 2px 2px #800000;
 }
 /* the styles for the navigation menu */
+#mobile_menu{
+	display:none;
+}
 #nav_menu ul {
 	list-style-type: none;
 	margin: 0;
@@ -139,6 +143,8 @@ article img {
 	float: right;
 	margin: .5em 0 1em 1em;
 	border: 1px solid black;
+	max-width: 40%;
+	min-width: 150px;
 }
 
 /* the styles for the aside */
@@ -153,7 +159,6 @@ aside h2 {
 	font-size: 130%;
 	padding: .5em 0 .25em 0;
 }
-
 aside h3 {
 	font-size: 105%;
 	padding-bottom: .25em;
@@ -172,4 +177,54 @@ footer p {
 	text-align: center;
 	color: white;
 	padding: 1em 0;
+}
+
+
+/* media queries */
+@media only screen and (width <= 450px) {
+	aside h2{
+		font-size: 85%;
+	}
+	section h1 {
+		font-size: 125%;
+	}
+	aside h2, section h2{
+		font-size: 110%;
+	}
+	/* slicknav stuff */
+	#nav_menu{
+		display:none;
+	}
+	#mobile_menu{
+		display: block;
+	}
+	.slicknav_menu{
+		background-color:#800000 !important; 
+	}
+}
+@media only screen and (width <= 420px){
+	body{font-size: 90%;}
+}
+@media only screen and (width <= 379px){
+
+	section img{
+		float:none;
+		max-width: 30%;
+	}
+	header{
+		text-align: center;
+	}
+	section, aside{
+		float:none;
+		width:95%;
+	}
+	aside{
+		padding-right: 2.5%;
+	}
+	aside h3{
+		font-size: 100%;
+	}
+	div{
+		column-count: 2;
+	}
 }
